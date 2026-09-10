@@ -49,19 +49,6 @@ namespace BlazingQuartz.Core
             return TriggerType.Unknown;
         }
 
-        public static string GetTriggerTypeDisplayName(this TriggerType value)
-        {
-            return value switch
-            {
-                TriggerType.Cron => "定时表达式",
-                TriggerType.Simple => "简单间隔",
-                TriggerType.Calendar => "日历间隔",
-                TriggerType.Daily => "每日时间",
-                TriggerType.Unknown => "未知",
-                _ => value.ToString()
-            };
-        }
-
         public static TimeOfDay ToTimeOfDay(this TimeSpan timeSpan)
         {
             return new TimeOfDay(timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds);

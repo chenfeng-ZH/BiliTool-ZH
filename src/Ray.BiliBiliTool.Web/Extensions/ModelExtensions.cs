@@ -8,6 +8,19 @@ namespace Ray.BiliBiliTool.Web.Extensions;
 
 public static class ModelExtensions
 {
+    public static string GetTriggerTypeDisplayName(this TriggerType triggerType)
+    {
+        return triggerType switch
+        {
+            TriggerType.Cron => "定时表达式",
+            TriggerType.Simple => "简单间隔",
+            TriggerType.Calendar => "日历间隔",
+            TriggerType.Daily => "每日时间",
+            TriggerType.Unknown => "未知",
+            _ => triggerType.ToString()
+        };
+    }
+
     public static string GetTriggerTypeIcon(this TriggerType triggerType)
     {
         switch (triggerType)
