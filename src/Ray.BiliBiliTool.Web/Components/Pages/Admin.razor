@@ -1,0 +1,39 @@
+@page "/Admin"
+@using Microsoft.AspNetCore.Authorization
+@rendermode InteractiveServer
+@attribute [Authorize]
+
+<PageTitle>修改密码</PageTitle>
+
+<MudText Typo="Typo.h5">修改密码</MudText>
+
+<MudCard Class="mx-auto my-4" Style="max-width: 500px;">
+    <MudCardContent>
+        @if (!string.IsNullOrEmpty(_errorMessage))
+        {
+            <MudAlert Severity="Severity.Error" Class="mb-3">@_errorMessage</MudAlert>
+        }
+        @if (!string.IsNullOrEmpty(_successMessage))
+        {
+            <MudAlert Severity="Severity.Success" Class="mb-3">@_successMessage</MudAlert>
+        }
+        <MudTextField @bind-Value="_username" Label="新用户名" Required="true" RequiredError="用户名不能为空" />
+        <MudTextField @bind-Value="_currentPassword" Label="当前密码" Required="true" RequiredError="密码不能为空"
+                      InputType="@_currentPasswordInput" Adornment="Adornment.End"
+                      AdornmentIcon="@_currentPasswordInputIcon" OnAdornmentClick="ToggleCurrentPasswordVisibility" />
+        <MudTextField @bind-Value="_newPassword" Label="新密码" Required="true" RequiredError="密码不能为空"
+                      InputType="@_passwordInput" Adornment="Adornment.End"
+                      AdornmentIcon="@_passwordInputIcon" OnAdornmentClick="TogglePasswordVisibility" />
+        <MudTextField @bind-Value="_confirmPassword" Label="确认密码" Required="true" RequiredError="密码不能为空"
+                      InputType="@_passwordInput" Adornment="Adornment.End"
+                      AdornmentIcon="@_passwordInputIcon" OnAdornmentClick="TogglePasswordVisibility" />
+    </MudCardContent>
+    <MudCardActions>
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="ChangePasswordAsync"
+                   Class="ml-auto">提交</MudButton>
+    </MudCardActions>
+</MudCard>
+
+<MudThemeProvider/>
+<MudDialogProvider/>
+<MudSnackbarProvider/>

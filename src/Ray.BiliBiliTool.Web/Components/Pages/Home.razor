@@ -1,0 +1,149 @@
+﻿@page "/"
+
+<PageTitle>首页 - BiliTool</PageTitle>
+
+<style>
+    .home-hero {
+        background: linear-gradient(135deg, #FB7299 0%, #FF9EB5 50%, #FFD3DE 100%);
+        border-radius: 16px;
+        padding: 40px 32px;
+        color: white;
+        margin-bottom: 24px;
+        box-shadow: 0 4px 20px rgba(251, 114, 153, 0.3);
+        position: relative;
+        overflow: hidden;
+    }
+    .home-hero::after {
+        content: "Bili";
+        position: absolute;
+        right: 24px;
+        bottom: -20px;
+        font-size: 96px;
+        font-weight: 900;
+        opacity: 0.15;
+    }
+    .home-hero h1 {
+        font-size: 28px;
+        font-weight: 700;
+        margin: 0 0 8px 0;
+    }
+    .home-hero p {
+        font-size: 15px;
+        opacity: 0.95;
+        margin: 0;
+        max-width: 70%;
+    }
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 16px;
+        margin-bottom: 24px;
+    }
+    .stat-card {
+        background: white;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        border: 1px solid #f0f0f0;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .stat-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(251, 114, 153, 0.15);
+    }
+    .stat-card .label {
+        font-size: 13px;
+        color: #888;
+        margin-bottom: 8px;
+    }
+    .stat-card .value {
+        font-size: 22px;
+        font-weight: 700;
+        color: #FB7299;
+    }
+    .quick-links {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 12px;
+    }
+    .quick-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: white;
+        border: 1px solid #f0f0f0;
+        border-radius: 10px;
+        padding: 14px 16px;
+        color: #333;
+        text-decoration: none;
+        transition: all 0.2s;
+    }
+    .quick-link:hover {
+        border-color: #FB7299;
+        color: #FB7299;
+        box-shadow: 0 2px 12px rgba(251, 114, 153, 0.12);
+    }
+    .quick-link .icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        background: #FFF0F4;
+        color: #FB7299;
+        flex-shrink: 0;
+    }
+    .quick-link .text {
+        font-size: 14px;
+        font-weight: 500;
+    }
+</style>
+
+<div class="home-hero">
+    <h1>👋 欢迎使用 BiliTool</h1>
+    <p>B 站自动任务工具 · 每日签到、投币、直播挂机、大会员福利自动领取，全部自动化托管。</p>
+</div>
+
+<div class="stat-grid">
+    <div class="stat-card">
+        <div class="label">📅 每日任务</div>
+        <div class="value">自动运行</div>
+    </div>
+    <div class="stat-card">
+        <div class="label">🎯 任务调度</div>
+        <div class="value">一键管理</div>
+    </div>
+    <div class="stat-card">
+        <div class="label">🔒 账号安全</div>
+        <div class="value">扫码登录</div>
+    </div>
+</div>
+
+<div class="quick-links">
+    <a class="quick-link" href="Schedules">
+        <span class="icon">🗓️</span>
+        <span class="text">任务调度</span>
+    </a>
+    <a class="quick-link" href="Configurations/DailyJobConfig">
+        <span class="icon">🎁</span>
+        <span class="text">每日任务</span>
+    </a>
+    <a class="quick-link" href="Configurations/MangaTaskConfig">
+        <span class="icon">📖</span>
+        <span class="text">漫画任务</span>
+    </a>
+    <a class="quick-link" href="Configurations/Silver2CoinTaskConfig">
+        <span class="icon">🪙</span>
+        <span class="text">银瓜子换硬币</span>
+    </a>
+    <a class="quick-link" href="Configurations/ChargeTaskConfig">
+        <span class="icon">⚡</span>
+        <span class="text">充电任务</span>
+    </a>
+    <a class="quick-link" href="Admin">
+        <span class="icon">👤</span>
+        <span class="text">账户管理</span>
+    </a>
+</div>

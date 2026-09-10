@@ -1,0 +1,66 @@
+@page "/login"
+@rendermode InteractiveServer
+
+<style>
+    .login-banner {
+        background: linear-gradient(135deg, #FB7299 0%, #FF9EB5 100%);
+        border-radius: 12px 12px 0 0;
+        padding: 28px 24px;
+        text-align: center;
+        color: white;
+    }
+    .login-banner .logo {
+        font-size: 32px;
+        margin-bottom: 8px;
+    }
+    .login-banner h5 {
+        margin: 0;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+    .login-banner p {
+        margin: 6px 0 0;
+        font-size: 13px;
+        opacity: 0.85;
+    }
+    .login-card {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 8px 32px rgba(251, 114, 153, 0.15) !important;
+    }
+</style>
+
+@if (_loginError)
+{
+    <MudAlert Severity="Severity.Error" Elevation="0" Class="mx-auto my-4" Style="max-width: 500px;">
+        用户名或密码错误，请重试。
+    </MudAlert>
+}
+
+<form action="/auth/login" method="post">
+    <input type="hidden" name="returnUrl" value="@returnUrl" />
+
+    <MudCard Class="mx-auto my-4 login-card" Style="max-width: 500px;">
+        <div class="login-banner">
+            <div class="logo">📺</div>
+            <h5>BiliTool</h5>
+            <p>B 站自动任务管理面板</p>
+        </div>
+        <MudCardContent Class="mt-6">
+            <MudTextField @bind-Value="_username" Name="username" Label="用户名" Required="true" RequiredError="用户名不能为空" />
+            <MudTextField @bind-Value="_password" Name="password" Label="密码" Required="true" RequiredError="密码不能为空"
+                          InputType="@_passwordInput" Adornment="Adornment.End"
+                          AdornmentIcon="@_passwordInputIcon" OnAdornmentClick="TogglePasswordVisibility" />
+        </MudCardContent>
+        <MudCardActions>
+            <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary"
+                       Class="ml-auto my-2 me-4" Style="background-color: #FB7299;">登录</MudButton>
+        </MudCardActions>
+    </MudCard>
+</form>
+
+<MudThemeProvider/>
+<MudPopoverProvider/>
+<MudDialogProvider/>
+<MudSnackbarProvider/>

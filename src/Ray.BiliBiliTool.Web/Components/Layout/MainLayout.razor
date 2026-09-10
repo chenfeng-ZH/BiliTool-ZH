@@ -1,0 +1,29 @@
+﻿@using Microsoft.AspNetCore.Components.Authorization
+@inherits LayoutComponentBase
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu/>
+    </div>
+
+    <main>
+        <div class="top-row px-4">
+            <a href="https://github.com/RayWangQvQ/BiliBiliToolPro" target="_blank">关于</a>
+            <AuthorizeView>
+                <Authorized>
+                    <a href="/auth/logout" class="nav-link">退出登录</a>
+                </Authorized>
+            </AuthorizeView>
+        </div>
+
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>
+
+<div id="blazor-error-ui">
+    发生未处理的错误。
+    <a href="" class="reload">刷新</a>
+    <a class="dismiss">🗙</a>
+</div>
