@@ -7,7 +7,7 @@ public class Silver2CoinJob(ILogger<Silver2CoinJob> logger, ISilver2CoinTaskAppS
     : BaseJob<Silver2CoinJob>(logger)
 {
     private readonly ILogger<Silver2CoinJob> _logger = logger;
-    public static readonly JobKey Key = new(nameof(Silver2CoinJob), Constants.BiliJobGroup);
+    public static readonly JobKey Key = new("银瓜子换硬币", Constants.BiliJobGroup);
 
     protected override async Task DoExecuteAsync(IJobExecutionContext context)
     {

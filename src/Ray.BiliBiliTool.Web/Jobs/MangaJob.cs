@@ -7,7 +7,7 @@ public class MangaJob(ILogger<MangaJob> logger, IMangaTaskAppService appService)
     : BaseJob<MangaJob>(logger)
 {
     private readonly ILogger<MangaJob> _logger = logger;
-    public static readonly JobKey Key = new(nameof(MangaJob), Constants.BiliJobGroup);
+    public static readonly JobKey Key = new("漫画任务", Constants.BiliJobGroup);
 
     protected override async Task DoExecuteAsync(IJobExecutionContext context)
     {

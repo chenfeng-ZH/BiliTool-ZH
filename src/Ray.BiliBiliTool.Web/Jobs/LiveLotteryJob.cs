@@ -7,7 +7,7 @@ public class LiveLotteryJob(ILogger<LiveLotteryJob> logger, ILiveLotteryTaskAppS
     : BaseJob<LiveLotteryJob>(logger)
 {
     private readonly ILogger<LiveLotteryJob> _logger = logger;
-    public static readonly JobKey Key = new(nameof(LiveLotteryJob), Constants.BiliJobGroup);
+    public static readonly JobKey Key = new("直播抽奖", Constants.BiliJobGroup);
 
     protected override async Task DoExecuteAsync(IJobExecutionContext context)
     {

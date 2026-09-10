@@ -7,7 +7,7 @@ public class VipBigPointJob(ILogger<VipBigPointJob> logger, IVipBigPointAppServi
     : BaseJob<VipBigPointJob>(logger)
 {
     private readonly ILogger<VipBigPointJob> _logger = logger;
-    public static readonly JobKey Key = new(nameof(VipBigPointJob), Constants.BiliJobGroup);
+    public static readonly JobKey Key = new("大会员积分", Constants.BiliJobGroup);
 
     protected override async Task DoExecuteAsync(IJobExecutionContext context)
     {

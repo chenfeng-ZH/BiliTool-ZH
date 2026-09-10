@@ -7,7 +7,7 @@ public class ChargeJob(ILogger<ChargeJob> logger, IChargeTaskAppService appServi
     : BaseJob<ChargeJob>(logger)
 {
     private readonly ILogger<ChargeJob> _logger = logger;
-    public static readonly JobKey Key = new(nameof(ChargeJob), Constants.BiliJobGroup);
+    public static readonly JobKey Key = new("充电", Constants.BiliJobGroup);
 
     protected override async Task DoExecuteAsync(IJobExecutionContext context)
     {

@@ -7,7 +7,7 @@ public class LiveFansMedalJob(ILogger<LiveFansMedalJob> logger, ILiveFansMedalAp
     : BaseJob<LiveFansMedalJob>(logger)
 {
     private readonly ILogger<LiveFansMedalJob> _logger = logger;
-    public static readonly JobKey Key = new(nameof(LiveFansMedalJob), Constants.BiliJobGroup);
+    public static readonly JobKey Key = new("粉丝勋章", Constants.BiliJobGroup);
 
     protected override async Task DoExecuteAsync(IJobExecutionContext context)
     {

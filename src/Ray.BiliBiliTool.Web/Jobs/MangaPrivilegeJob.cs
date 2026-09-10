@@ -9,7 +9,7 @@ public class MangaPrivilegeJob(
 ) : BaseJob<MangaPrivilegeJob>(logger)
 {
     private readonly ILogger<MangaPrivilegeJob> _logger = logger;
-    public static readonly JobKey Key = new(nameof(MangaPrivilegeJob), Constants.BiliJobGroup);
+    public static readonly JobKey Key = new("漫画大会员", Constants.BiliJobGroup);
 
     protected override async Task DoExecuteAsync(IJobExecutionContext context)
     {

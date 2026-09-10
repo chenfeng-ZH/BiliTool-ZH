@@ -9,7 +9,7 @@ public class VipPrivilegeJob(
 ) : BaseJob<VipPrivilegeJob>(logger)
 {
     private readonly ILogger<VipPrivilegeJob> _logger = logger;
-    public static readonly JobKey Key = new(nameof(VipPrivilegeJob), Constants.BiliJobGroup);
+    public static readonly JobKey Key = new("大会员权益", Constants.BiliJobGroup);
 
     protected override async Task DoExecuteAsync(IJobExecutionContext context)
     {

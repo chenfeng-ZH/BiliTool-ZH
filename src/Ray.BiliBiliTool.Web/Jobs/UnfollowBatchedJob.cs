@@ -9,7 +9,7 @@ public class UnfollowBatchedJob(
 ) : BaseJob<UnfollowBatchedJob>(logger)
 {
     private readonly ILogger<UnfollowBatchedJob> _logger = logger;
-    public static readonly JobKey Key = new(nameof(UnfollowBatchedJob), Constants.BiliJobGroup);
+    public static readonly JobKey Key = new("批量取关", Constants.BiliJobGroup);
 
     protected override async Task DoExecuteAsync(IJobExecutionContext context)
     {

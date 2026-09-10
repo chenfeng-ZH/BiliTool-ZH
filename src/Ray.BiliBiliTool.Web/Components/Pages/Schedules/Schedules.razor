@@ -140,9 +140,9 @@
                         {
                             <div class="d-flex align-center">
                                 <MudIcon Icon="@context.Item.TriggerType.GetTriggerTypeIcon()"
-                                         Title="@(context.Item.TriggerType.ToString())" Size="Size.Small"
+                                         Title="@(context.Item.TriggerType.GetTriggerTypeDisplayName())" Size="Size.Small"
                                          Class="mr-1"/>
-                                @(context.Item.TriggerType == TriggerType.Unknown ? context.Item.TriggerTypeClassName == null ? TriggerType.Unknown.ToString() : context.Item.TriggerTypeClassName : context.Item.TriggerType)
+                                @(context.Item.TriggerType == TriggerType.Unknown ? context.Item.TriggerTypeClassName == null ? "未知" : context.Item.TriggerTypeClassName : context.Item.TriggerType.GetTriggerTypeDisplayName())
                             </div>
                         }
                         else
@@ -151,9 +151,9 @@
                                 <ChildContent>
                                     <div class="d-flex align-center">
                                         <MudIcon Icon="@context.Item.TriggerType.GetTriggerTypeIcon()"
-                                                 Title="@(context.Item.TriggerType.ToString())" Size="Size.Small"
+                                                 Title="@(context.Item.TriggerType.GetTriggerTypeDisplayName())" Size="Size.Small"
                                                  Class="mr-1"/>
-                                        @(context.Item.TriggerType == TriggerType.Unknown ? context.Item.TriggerTypeClassName == null ? TriggerType.Unknown.ToString() : context.Item.TriggerTypeClassName : context.Item.TriggerType)
+                                        @(context.Item.TriggerType == TriggerType.Unknown ? context.Item.TriggerTypeClassName == null ? "未知" : context.Item.TriggerTypeClassName : context.Item.TriggerType.GetTriggerTypeDisplayName())
                                     </div>
                                 </ChildContent>
                                 <TooltipContent>
